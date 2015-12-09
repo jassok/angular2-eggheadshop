@@ -1,4 +1,3 @@
-//These first 3 lines will be deprecated by the final release
 import 'reflect-metadata'
 import 'zone.js'
 import "angular2/angular2";
@@ -17,4 +16,3 @@ class App{
 }
 
 bootstrap(App);
-

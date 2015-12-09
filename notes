@@ -1,0 +1,6 @@
+ES6
+    - Doesn't have full support
+
+
+typescript has public and private, but not in js
+    - private is not enforced.

@@ -1,2 +1,4 @@
 /node_modules/
 /dist/
+egg.sublime-workspace
+npm-debug.log
