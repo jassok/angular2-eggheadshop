@@ -1,0 +1,23 @@
+// =========================================================== */
+// == Variables ============================================== */
+// =========================================================== */
+
+    // == Fonts ============================================== */
+    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,600italic,700,700italic);
+
+    $font-base-size:20px;
+
+    $font-base-leading: 1.5em;
+    $font-base-kerning:0em;
+
+    $font-heading-family: "Source Sans Pro", sans-serif;
+    $font-sans-family: 'Source Sans Pro', sans-serif;
+
+    // == Typography ========================================= */
+    $font-headings: $font-heading-family;
+    $font-paragraph: $font-sans-family;
+
+    // == Column System ====================================== */
+    $max-width: 1200px;
+    $columns: 16;
+    $column-width: $max-width/$columns;

@@ -1,0 +1,46 @@
+/* line 3, sass/style.scss */
+html, body { width: 100%; height: 100%; background-color: #CED9DE; }
+
+/* line 9, sass/style.scss */
+* { outline: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* line 14, sass/style.scss */
+body { display: flex; justify-content: center; align-items: center; }
+
+/* line 20, sass/style.scss */
+.app { background-color: white; min-width: 600px; max-width: 800px; width: 100%; height: 600px; display: flex; }
+
+/* line 29, sass/style.scss */
+.app, .contact-list-container { border-radius: 10px; }
+
+/* line 33, sass/style.scss */
+.contact-list-container { width: 40%; background-color: #EDF4F7; padding: 10px; overflow-y: hidden; display: flex; flex-direction: column; }
+
+/* line 42, sass/style.scss */
+.contact-list { overflow-y: auto; }
+
+/* line 46, sass/style.scss */
+.contact-details-container { display: flex; flex-direction: column; width: 60%; overflow-y: auto; }
+
+/* line 53, sass/style.scss */
+.contact-details, .contact-details-new { flex-grow: 1; display: flex; }
+
+/* line 58, sass/style.scss */
+.contact-edit { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E9EFF2; padding: 10px; }
+
+/* line 66, sass/style.scss */
+.contact-details-new { display: none; }
+
+/* line 70, sass/style.scss */
+.btn-file { font-size: 10px; padding: 0 10px; }
+
+/* line 75, sass/style.scss */
+.profile { padding: 15px; }
+/* line 79, sass/style.scss */
+.profile .details label { display: block; text-align: right; padding-right: 15px; }
+/* line 85, sass/style.scss */
+.profile .details .lrow { border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 10px 0; }
+/* line 91, sass/style.scss */
+.profile .name { padding-bottom: 15px; border-bottom: 1px solid #aaa; }
+/* line 96, sass/style.scss */
+.profile .picture { padding: 10px; }

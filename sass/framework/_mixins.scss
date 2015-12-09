@@ -1,0 +1,74 @@
+@function ems($target, $context: $font-base-size) {
+    @if $target == 0 {
+        @return 0;
+    }
+    @return $target / $context + 0em;
+}
+
+@function percent($width, $container-width: $max-width) {
+    @return percentage($width / $container-width);
+}
+
+@function leading($amount: 1, $context: $font-base) {
+    @return ems($font-base-line-height * $amount, $context);
+}
+
+@mixin col($n, $container-width: $max-width) {
+    width: percentage($n * $column-width / $container-width);
+}
+
+@mixin mediaQuery($screen-size, $restrict: "max-width") {
+    @media only screen and ($restrict: $screen-size) {
+        @content;
+    }
+}
+
+@mixin placeholderStyle {
+    ::-webkit-input-placeholder { @content; }
+    :-ms-input-placeholder { @content; }
+    ::-moz-placeholder { @content; }
+    :-moz-placeholder { @content; }
+}
+
+@function rem($size) {
+    @return #{ $size / 16px }rem;
+}
+
+@mixin diagonalEdge($side, $direction, $bgColor, $angle) {
+    // Side Dependant
+    @if $side == 'right' {
+        left: 100%;
+
+        // Direction Dependant
+        @if $direction == 'bt' { // Bottom to Top
+            background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 100' fill='"+$bgColor+"' stroke='none'><path d='M0,0 L0,100 L100,0 Z'></path></svg>") no-repeat;
+        }
+
+        @if $direction == 'tb' { // Top to Bottom
+            background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 100' fill='"+$bgColor+"' stroke='none'><path d='M0,0 L100,100 L0,100 Z'></path></svg>") no-repeat;
+        }
+    }
+
+    @if $side == 'left' {
+        left:-$angle;
+
+        // Direction Dependant
+        @if $direction == 'bt' { // Bottom to Top
+            background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 100' fill='"+$bgColor+"' stroke='none'><path d='M0,0 L100,0 L100,100 Z'></path></svg>") no-repeat;
+        }
+
+        @if $direction == 'tb' { // Top to Bottom
+            background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 100' fill='"+$bgColor+"' stroke='none'><path d='M100,100 L0,100 L100,0 Z'></path></svg>") no-repeat;
+        }
+    }
+
+    // Base Styles
+    background-size:100% 100%;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: $angle; // this sets the angle
+    top:0;
+}
+
+// Right:

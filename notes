@@ -1,6 +1,27 @@
-ES6
-    - Doesn't have full support
+-----------------------------------------------------------------
+Research
+-----------------------------------------------------------------
+    ES6
+    Babble
 
+-----------------------------------------------------------------
+Notes
+-----------------------------------------------------------------
+    typescript has public and private, but not in js
+        - private is not enforced.
 
-typescript has public and private, but not in js
-    - private is not enforced.
+    fat arrow functions
+        - block scope instead of function scope
+
+    Wont actually write decorators, will only use whats given 
+    from angular. Comes from the import and dropped into classes.
+
+    Decorators are library / frameworks that you include (Dependencies)
+
+    Angular 2 may use React native for mobile apps?
+
+-----------------------------------------------------------------
+Resources
+-----------------------------------------------------------------
+
+    typescriptlang.org/playground
