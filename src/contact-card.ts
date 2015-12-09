@@ -1,10 +1,10 @@
 import {Component} from "angular2/core";
 
 @Component({
-    selector: `profile-component`,
-    templateUrl: 'views/profile.html'
+    selector: 'contact-card',
+    templateUrl: 'views/contact-card.html'
 })
 //You *must* `export` your class so you can `import` it later 
-export class profileComponent {
+export class contactCard {
 
 }

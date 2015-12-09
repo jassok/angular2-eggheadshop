@@ -6,17 +6,17 @@ import {Component} from "angular2/core";
 import {bootstrap} from "angular2/platform/browser";
 
 // Components
-import {profileComponent} from "./profile";
+import {contactCard} from "./contact-card";
 import {addComponent} from "./addnew";
 
 @Component({
-    selector:`app`,
+    selector:'app',
     templateUrl:'views/main.html',
-    directives:[profileComponent, addComponent]
+    directives:[contactCard, addComponent]
 })
 
 class App {
-    message = `Hello world!`;
+    message = 'Hello world!';
 }
 
 
