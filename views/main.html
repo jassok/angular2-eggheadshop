@@ -1,53 +1,25 @@
- <main class="app">
-    <section class="contact-list-container">
-      <h3><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Contacts</h3>
-
-      <div class="contact-list">
-        <h4 class="small">A</h4>
-        <div class="list-group">
-          <button type="button" class="list-group-item active">Adam Apple</button>
-          <button type="button" class="list-group-item">Contact Name</button>
-          <button type="button" class="list-group-item">Contact Name</button>
-          <button type="button" class="list-group-item">Contact Name</button>
-          <button type="button" class="list-group-item">Contact Name</button>
-        </div>
-
-        <h4 class="small">B</h4>
-        <div class="list-group">
-          <button type="button" class="list-group-item">Contact Name</button>
-          <button type="button" class="list-group-item">Contact Name</button>
-          <button type="button" class="list-group-item">Contact Name</button>
-          <button type="button" class="list-group-item">Contact Name</button>
-          <button type="button" class="list-group-item">Contact Name</button>
-        </div>
-
-        <h4 class="small">C</h4>
-        <div class="list-group">
-          <button type="button" class="list-group-item">Contact Name</button>
-          <button type="button" class="list-group-item">Contact Name</button>
-          <button type="button" class="list-group-item">Contact Name</button>
-          <button type="button" class="list-group-item">Contact Name</button>
-          <button type="button" class="list-group-item">Contact Name</button>
-        </div>
-      </div>
-
+<main class="app display-flex">
+    <section class="list one-third">
+        list of contacts
     </section>
 
-    <section class="contact-details-container">
+    <section class="contact-card two-thirds">
 
-      <div class="contact-details">
-        <contact-card class="component"></contact-card>
-      </div>
+        <div [ng-switch]="state">
+            <contact-card *ngSwitchWhen="VIEW">
+            </contact-card>
+            <contact-edit *ngSwitchWhen="EDIT">
+                edit contact
+            </contact-edit>
+            <contact-new *ngSwitchWhen="NEW">
+                new contact
+            </contact-new>
+        </div>
 
-      <div class="contact-details-new">
-        <add-component></add-component>
-      </div>
-
-      <div class="contact-edit">
-        <button class="btn btn-default btn-edit"><span class="glyphicon glyphicon-plus"></span></button>
-        <button class="btn btn-default">Edit</button>
-      </div>
-
+        <div class="controls">
+            <button class="btn btn-default btn-edit"><span class="glyphicon glyphicon-plus"></span></button>
+            <button class="btn btn-default">Edit</button>
+        </div>
     </section>
-
-  </main>
+    
+</main>

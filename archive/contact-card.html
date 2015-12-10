@@ -1,0 +1,35 @@
+<div class="profile">
+    <div class="name display-flex">
+        <div class="one-third">
+            <div class="picture"><img src="{{ selectedUser.avatar }}" alt=""></div>
+        </div>
+        <div class="two-thirds">
+            <h4>{{ selectedUser.name.first }} {{ selectedUser.name.last }}</h4>
+            <h5>{{ selectedUser.company}}</h5>
+        </div>
+
+    </div>
+
+    <div class="details">
+        <div class="lrow display-flex">
+            <div class="half"><label>Home Phone:</label></div>
+            <div class="half">{{ selectedUser.phone }}</div>
+        </div>
+
+        <div class="lrow display-flex">
+            <div class="half"><label>Address:</label></div>
+            <div class="half">
+                <p>
+                    {{ selectedUser.address.streetAddress }} <br />
+                    {{ selectedUser.address.city }} {{ selectedUser.address.state}}, {{ selectedUser.address.zipCode}}
+                </p>
+            </div>
+        </div>
+
+        <div class="lrow display-flex">
+            <div class="half"><label>Email</label></div>
+            <div class="half">{{ selectedUser.email }}</div>
+        </div>
+    </div>
+    
+</div>

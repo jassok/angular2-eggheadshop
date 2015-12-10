@@ -1,0 +1,33 @@
+<div class="profile">    
+    <div class="name display-flex">
+        <div class="one-third">
+            <div class="picture"><img src="images/unknown.png" alt=""></div>
+        </div>
+        <div class="two-thirds">
+            <input type="text" #fullName class="form-control" id="name" placeholder="Full Name">
+            <input type="text" #company class="form-control" id="company" placeholder="Company">
+        </div>
+    </div>
+
+    <div class="details">
+        <div class="lrow display-flex">
+            <div class="half"><label>Home Phone:</label></div>
+            <div class="half"><input type="text" class="form-control" id="name" placeholder="Home Phone"></div>
+        </div>
+
+        <div class="lrow display-flex">
+            <div class="half"><label>Address:</label></div>
+            <div class="half">
+                <input type="text" class="form-control" id="address1" placeholder="Address Line 1">
+                <input type="text" class="form-control" id="address2" placeholder="Address Line 2">
+            </div>
+        </div>
+
+        <div class="lrow display-flex">
+            <div class="half"><label>Email</label></div>
+            <div class="half"><input #email type="email" class="form-control" id="email" placeholder="Email"></div>
+        </div>
+
+        <button (click)="update(fullName.value)">Update Profile</button>
+    </div>
+</div>
