@@ -7,12 +7,15 @@ import {bootstrap} from "angular2/platform/browser";
 import {HTTP_PROVIDERS} from "angular2/http";
 
 // Components
-import {ContactCard} from "./contact-card"
+import {contactCard} from "./contact-card";
+import {contactEdit} from "./contact-edit";
+import {contactNew} from "./contact-new";
+
 
 @Component({
     selector:'app',
     templateUrl:'views/main.html',
-    directives: [ContactCard]
+    directives: [contactCard, contactEdit, contactNew]
 })
 
 class App {
@@ -22,7 +25,9 @@ class App {
 
     state:string = this.VIEW;
 
-    constructor() { }
+    constructor(public http:Http) { 
+
+    }
 }
 
 bootstrap(App, [HTTP_PROVIDERS]);

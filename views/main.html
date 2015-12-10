@@ -6,19 +6,19 @@
     <section class="contact-card two-thirds">
 
         <div [ng-switch]="state">
-            <contact-card *ngSwitchWhen="VIEW">
-            </contact-card>
-            <contact-edit *ngSwitchWhen="EDIT">
-                edit contact
-            </contact-edit>
-            <contact-new *ngSwitchWhen="NEW">
-                new contact
-            </contact-new>
+            <contact-card *ngSwitchWhen="VIEW"
+            ></contact-card>
+            <contact-edit *ngSwitchWhen="EDIT"
+            ></contact-edit>
+            <contact-new *ngSwitchWhen="NEW"
+            ></contact-new>
         </div>
 
         <div class="controls">
-            <button class="btn btn-default btn-edit"><span class="glyphicon glyphicon-plus"></span></button>
-            <button class="btn btn-default">Edit</button>
+            <button class="btn btn-default" (click)="state = NEW">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+            <button class="btn btn-default" (click)="state = EDIT">Edit</button>
         </div>
     </section>
     
