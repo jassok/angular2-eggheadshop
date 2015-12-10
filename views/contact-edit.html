@@ -1,1 +1,47 @@
-edit current contact
+<div class="contact-card">
+    <div class="row display-flex">
+        <div class="avatar">
+            <img [src]="contact.avatar" alt="">
+        </div>
+
+        <div class="title">
+            <input type="text" [ng-model]="contact.name.first">
+            <input type="text" [ng-model]="contact.name.last">
+
+            <input type="text" [ng-model]="contact.company">
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row display-flex info">
+        <label>Home:</label>
+        <input type="text" [ng-model]="contact.phone">
+    </div>
+
+    <hr>
+
+    <div class="row display-flex info">
+        <label>Address:</label>
+        <div class="inputs">
+            <input type="text" [ng-model]="contact.address.streetAddress">
+            <input type="text" [ng-model]="contact.address.city">
+            <input type="text" [ng-model]="contact.address.state">
+            <input type="text" [ng-model]="contact.address.zipCode">
+        </div>
+    </div>
+
+    <hr>
+    
+    <div class="row display-flex info">
+        <label>Email:</label>
+        <input type="text" [ng-model]="contact.email">
+    </div>
+
+    <hr>
+    
+    <div class="row display-flex info">
+        <label>Bio:</label>
+        <textarea [ng-model]="contact.lorem"></textarea>
+    </div>
+</div>

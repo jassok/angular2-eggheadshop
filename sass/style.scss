@@ -1,104 +1,99 @@
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px|Oswald);
 @import "compass";
 
 html, body {
     width: 100%;
     height: 100%;
     background-color: #CED9DE;
+    font-family: 'Slabo 27px', serif;
+    font-size:20px;
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);
 }
 
-* {
-    outline: none;
+
+#{headings(1, 6)} {
+    font-family: 'Oswald', sans-serif;
+    margin:0;
+}
+
+hr {
+    border:none;
+    border-bottom:1px solid rgba(0,0,0,.15);
+    margin:15px 0;
+}
+
+p {
+    margin:0;
+}
+
+input, textarea {
+    padding:15px 10px;
+    display:inline-block;
+    width:100%;
     @include box-sizing(border-box);
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .app {
+    position:relative;
     background-color: white;
-    min-width: 600px;
-    max-width: 800px;
-    width: 100%;
+    width: 600px;
     height: 600px;
-    display: flex;
-}
+    margin:0 auto;
+    overflow:hidden;
+    @include border-radius(10px);
 
-.app, .contact-list-container {
-    border-radius: 10px;
-}
-
-.component {
-    display: block;
-    width: 100%;
-}
-
-.contact-list-container {
-    width: 40%;
-    background-color: #EDF4F7;
-    padding: 10px;
-    overflow-y: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-list {
-    overflow-y: auto;
-}
-
-.contact-details-container {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    overflow-y: auto;
-}
-
-.contact-details, .contact-details-new {
-    flex-grow: 1;
-    display: flex;
-}
-
-.contact-edit {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #E9EFF2;
-    padding: 10px;
-}
-
-.contact-details-new {
-    // display: none;
-}
-
-.btn-file {
-    font-size: 10px;
-    padding: 0 10px;
-}
-
-.profile {
-    padding:15px;
-
-    .details {
-        label {
-            display:block;
-            text-align:right;
-            padding-right:15px;
-        }
-
-        .lrow {
-            border-bottom:1px solid rgba(0,0,0,.1);
-            padding:10px 0;
-        }
+    .contact {
+        position:relative;
+        margin-right:10px;
+        padding:15px 10px;
     }
 
-    .name {
-        padding-bottom:15px;
-        border-bottom:1px solid #aaa;
-    }
+    .list {
+        background-color:rgba(0,0,0,.1);
+        border-right:1px solid rgba(0,0,0,.15);
+        margin-right:10px;
+        padding:15px 10px;
 
-    .picture {
+        @include border-radius(10px 0 0 10px);
+
+    }
+}
+
+.contact-card {
+}
+
+.contactView {
+    max-height:100%;
+    overflow-y:scroll;
+    .avatar {
+        margin-right:10px;
+        border:4px solid #CED9DE;
+        line-height:0;
+        img {
+            max-width:100%;
+        }
+    }
+    .info {
         padding:10px;
+        label {
+            margin-right:10px;
+            font-weight:bold;
+            width:125px;
+        }
     }
+}
+
+.controls {
+    position:absolute;
+    z-index:2;
+    bottom:0;
+    left:0;
+    width:100%;
+    background-color:white;
+    border-top:1px solid rgba(0,0,0,.15);
+    padding:15px;
 }

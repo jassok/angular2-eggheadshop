@@ -1,4 +1,4 @@
-import {Component} from "angular2/core";
+import {Component, Input, Output, EventEmitter} from "angular2/angular2";
 import {bootstrap} from "angular2/platform/browser";
 
 //All components will follow the same "Class with @Component" pattern
@@ -8,4 +8,6 @@ import {bootstrap} from "angular2/platform/browser";
     templateUrl: 'views/contact-edit.html'
 })
 //You *must* `export` your class so you can `import` it later 
-export class contactEdit {}
+export class contactEdit {
+    @Input() contact;
+}

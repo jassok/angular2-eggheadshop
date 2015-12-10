@@ -9,5 +9,5 @@ import {bootstrap} from "angular2/platform/browser";
 })
 //You *must* `export` your class so you can `import` it later 
 export class contactCard {
-    @Output() edit = new EventEmitter();
+    @Input() contact;
 }

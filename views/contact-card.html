@@ -1,1 +1,43 @@
-contact card
+<div class="contact-card">
+    <div class="row display-flex">
+        <div class="avatar">
+            <img [src]="contact.avatar" alt="">
+        </div>
+
+        <div class="title">
+            <h4>{{ contact.name.first }} {{ contact.name.last }}</h4>
+            <h5>{{ contact.company }}</h5>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row display-flex info">
+        <label>Home:</label>
+        <p>{{ contact.phone }}</p>
+    </div>
+
+    <hr>
+
+    <div class="row display-flex info">
+        <label>Address:</label>
+        <p>
+            {{ contact.address.streetAddress }} <br>
+            {{ contact.address.city}} {{ contact.address.state}}, {{ contact.address.zipCode}}
+        </p>
+    </div>
+
+    <hr>
+    
+    <div class="row display-flex info">
+        <label>Email:</label>
+        <p>{{ contact.email }}</p>
+    </div>
+
+    <hr>
+    
+    <div class="row info">
+        <p>{{ contact.lorem }}</p>
+        <br>
+    </div>
+</div>

@@ -3,22 +3,24 @@
         list of contacts
     </section>
 
-    <section class="contact-card two-thirds">
+    <section class="contact two-thirds">
 
-        <div [ng-switch]="state">
+        <div class="contactView" [ng-switch]="state">
             <contact-card *ngSwitchWhen="VIEW"
+                [contact]="contact"
             ></contact-card>
             <contact-edit *ngSwitchWhen="EDIT"
+                [contact]="contact"
             ></contact-edit>
             <contact-new *ngSwitchWhen="NEW"
             ></contact-new>
         </div>
 
-        <div class="controls">
-            <button class="btn btn-default" (click)="state = NEW">
-                <span class="glyphicon glyphicon-plus"></span>
-            </button>
-            <button class="btn btn-default" (click)="state = EDIT">Edit</button>
+        <div class="controls display-flex justify-content" data-content="space-between">
+            <button class="btn btn-default" (click)="state = NEW" *ngIf="!editing">Add New</button>
+            <button class="btn btn-default" (click)="saveCard(contact)" *ngIf="editing">Save</button>
+
+            <button class="btn btn-default" (click)="editContact()">{{ action }}</button>
         </div>
     </section>
     
